@@ -1,17 +1,50 @@
 import React from 'react'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Login from './Login'
 import { getTokenFromUrl } from './spotify';
+import SpotifyWebApi from 'spotify-web-api-js';
+
+
+
+
 
 // 70b3b9f9265844e798e8d5c0aa21f825
 
+
+const spotify= new SpotifyWebApi();
+
+
+
+
 function App() {
 
+  const [token, setToken] = useState(null);
+
+
+
+
+
   useEffect(()=>{
-      const token = getTokenFromUrl();
-      console.log("I have a token", token);
-  }, []);
+      const hash = getTokenFromUrl();
+      window.location.hash = "";
+      const _token = hash.access_token;
+
+      if(_token) {
+        setToken(_token)
+
+        spotify.setAccessToken(_token)
+
+        spotify.getMe().then(user => {
+          console.log('iervnienrvpvbr',user);
+        });
+      }
+
+
+
+      console.log('THis is it for me')
+
+    }, []);
 
 
 
@@ -20,9 +53,18 @@ function App() {
 
   return (
     <div className="App">
-      
-      <Login/>
+      {
+        token?(
+          <h1>I am logged in</h1>
+        ) : (
+          <Login/>
+        )
 
+
+
+
+      }
+      
       </div>
   );
 }
