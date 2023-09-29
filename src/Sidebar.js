@@ -23,8 +23,12 @@ function Sidebar() {
 
       <br/>
       
-      <strong> 
+      <strong className='sidebar__title'>PLAYLISTS</strong>
+      <hr/>
 
+      <SidebarOption title="Hip Hop"/>
+      <SidebarOption title="Rock"/>
+      <SidebarOption title="RNB"/>
 
     </div>
   )

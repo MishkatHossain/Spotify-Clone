@@ -15,7 +15,7 @@ function Player({spotify}) {
         </div>
     </div>
 
-    <Footer/>
+    // <Footer/>
   );
 }
 
