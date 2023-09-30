@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
 import { DataLayer } from './DataLayer';
-import reducer, {initialState} from './reducer';
+import './index.css';
+import reducer from './reducer';
+import reportWebVitals from './reportWebVitals';
 // import * as serviceWorker from "./serviceWorker";
 
 
@@ -13,8 +13,8 @@ import reducer, {initialState} from './reducer';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <DataLayer initialState reducer={reducer}>
 
+    <DataLayer initialState reducer={reducer}>
       <App />
     </DataLayer>
     

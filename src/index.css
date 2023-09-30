@@ -1,3 +1,18 @@
+body::-webkit-scrollbar{
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 * {
   margin: 0;
 }
